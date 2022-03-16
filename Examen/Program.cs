@@ -30,33 +30,6 @@ namespace Examen
             }
 
 
-             
-
-            List<int> negros = new List<int>
-            {
-                2,
-                4,
-                6,
-                8,
-                10,
-                11,
-                13,
-                15,
-                17,
-                20,
-                22,
-                24,
-                26,
-                28,
-                29,
-                31,
-                33,
-                35
-
-            }; // negros
-
-
-            
 
             Console.WriteLine("Bienvenido a la Ruleta Rusaaaaaa :D");
 
@@ -120,7 +93,7 @@ namespace Examen
 
                                 // Generamos numeros aleatorios
                                 Random Generar = new Random();
-                                int aleatorio = Generar.Next(1, 37);
+                                int aleatorio = Generar.Next(1, 36);
 
 
                                 if (numeroapostado == aleatorio)
@@ -189,27 +162,39 @@ namespace Examen
                                     Random Generar = new Random();
                                     int aleatorio2 = Generar.Next(1, 36);
 
-                                    if (aleatorio2 == 1 || aleatorio2 == 3 || aleatorio2 == 5 || aleatorio2 == 7 || aleatorio2 == 9 || aleatorio2 == 12 || aleatorio2 == 14 || aleatorio2 == 16 || aleatorio2 == 18 || aleatorio2 == 19|| aleatorio2 == 21 || aleatorio2 == 23 || aleatorio2 == 25 || aleatorio2 == 27 || aleatorio2 == 30 || aleatorio2 == 32 || aleatorio2 == 34 || aleatorio2 == 36)
+
+                                    if (!EsMultiplo(dinero))
                                     {
-                                        Console.WriteLine();
-                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
-                                        Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
-                                        saldo3 += dinero * 5;
-                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
-                                        Console.WriteLine("Presiona una tecla para continuar ");
-                                        Console.WriteLine();
+                                        Console.WriteLine("No puedes realizar tu apuesta ");
+                                        continue;
                                     }
                                     else
                                     {
-                                        Console.WriteLine();
-                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
-                                        Console.WriteLine();
-                                        Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
-                                        saldo3 -= dinero;
-                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
-                                        Console.WriteLine("Presiona una tecla para continuar ");
-                                        Console.WriteLine();
+                                        if (aleatorio2 == 1 || aleatorio2 == 3 || aleatorio2 == 5 || aleatorio2 == 7 || aleatorio2 == 9 || aleatorio2 == 12 || aleatorio2 == 14 || aleatorio2 == 16 || aleatorio2 == 18 || aleatorio2 == 19 || aleatorio2 == 21 || aleatorio2 == 23 || aleatorio2 == 25 || aleatorio2 == 27 || aleatorio2 == 30 || aleatorio2 == 32 || aleatorio2 == 34 || aleatorio2 == 36)
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
+                                            saldo3 += dinero * 5;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+                                            Console.WriteLine();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine();
+                                            Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
+                                            saldo3 -= dinero;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+                                            Console.WriteLine();
+                                        }
                                     }
+
+
+                                    
 
                                     
                                 }
@@ -224,34 +209,43 @@ namespace Examen
                                     int dinero = int.Parse(Console.ReadLine());
 
                                     Random Generar = new Random();
-                                    int aleatorio2 = Generar.Next(1, 36); 
-                                    if (aleatorio2 == 2 || aleatorio2 == 4 || aleatorio2 == 6 || aleatorio2 == 8 || aleatorio2 == 10 || aleatorio2 == 11 || aleatorio2 == 13 || aleatorio2 == 15 || aleatorio2 == 17 || aleatorio2 == 20 || aleatorio2 == 22 || aleatorio2 == 26 || aleatorio2 == 28 || aleatorio2 == 29 || aleatorio2 == 31 || aleatorio2 == 33 || aleatorio2 == 35       )
+                                    int aleatorio2 = Generar.Next(1, 36);
+
+                                    if (!EsMultiplo(dinero))
                                     {
-                                        Console.WriteLine();
-                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
-                                        Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
-                                        saldo3 += dinero * 5;
-                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
-                                        Console.WriteLine("Presiona una tecla para continuar ");
+                                        Console.WriteLine("No puedes realizar tu apuesta ");
+                                        continue;
                                     }
                                     else
                                     {
-                                        Console.WriteLine();
-                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
-                                        Console.WriteLine();
-                                        Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
-                                        saldo3 -= dinero;
-                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
-                                        Console.WriteLine("Presiona una tecla para continuar ");
+                                        if (aleatorio2 == 2 || aleatorio2 == 4 || aleatorio2 == 6 || aleatorio2 == 8 || aleatorio2 == 10 || aleatorio2 == 11 || aleatorio2 == 13 || aleatorio2 == 15 || aleatorio2 == 17 || aleatorio2 == 20 || aleatorio2 == 22 || aleatorio2 == 26 || aleatorio2 == 28 || aleatorio2 == 29 || aleatorio2 == 31 || aleatorio2 == 33 || aleatorio2 == 35)
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
+                                            saldo3 += dinero * 5;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine();
+                                            Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
+                                            saldo3 -= dinero;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
 
+                                        }
+                                        Console.ReadKey();
                                     }
+
+                                    
                                     Console.ReadKey();
                                 }
                             }
                             Console.ReadKey();
-
-
-
 
                         }
 
