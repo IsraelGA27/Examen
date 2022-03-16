@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// Lo maximo que se pudo 
 namespace Examen
 {
     class Program
