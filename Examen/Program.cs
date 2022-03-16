@@ -30,27 +30,7 @@ namespace Examen
             }
 
 
-            List<int> rojos = new List<int>
-            {
-                1,
-                3,
-                5,
-                7,
-                9,
-                12,
-                14,
-                16,
-                18,
-                19,
-                21,
-                23,
-                25,
-                27,
-                30,
-                32,
-                34,
-                36
-            }; // Rojos 
+             
 
             List<int> negros = new List<int>
             {
@@ -165,15 +145,115 @@ namespace Examen
                         }
 
                         break;
-                    case 2:
+                    case 2: //////////////////////////////////////////////////////
                         int saldo3 = 300;
 
-                        Console.WriteLine();
-                        Console.WriteLine("Tu saldo es de: " + saldo3 + " Pesos ");
-                        Console.WriteLine();
-                        Console.Write("APUESTA A ROJO O NEGRO     -1 PARA SALIR AL MENU ");
-                        Console.WriteLine("1- rojo       2.-negro   ");
-                        Console.WriteLine();
+                        while (true)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Tu saldo es de: " + saldo3 + " Pesos ");
+                            Console.WriteLine();
+                            Console.Write("APUESTA A ROJO O NEGRO     -1 PARA SALIR AL MENU ");
+                            Console.WriteLine();
+                            Console.WriteLine("1- rojo       2.-negro   ");
+                            Console.WriteLine();
+
+                            int apuesta3 = int.Parse(Console.ReadLine());
+
+                            if (apuesta3 == -1 || apuesta3 > 3 || apuesta3 == -1)
+                            {
+
+                                if (apuesta3 == -1)
+                                {
+                                    //Console.WriteLine("Estas apostando: " + apuesta2 + "  Y solo tienes: " + saldo2 + " disponibles ");
+                                    break;
+                                }
+
+                                Console.WriteLine("No puedes realizar tu apuesta ");
+
+                            }
+                            else
+                            {
+                                if (apuesta3 == 1) // Rojos 
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Tu saldo es de: " + saldo3 + " Pesos ");
+                                    Console.WriteLine();
+                                    Console.Write("¿Cuanto deseas apostar?     -1 PARA SALIR AL MENU ");
+                                    Console.WriteLine();
+
+                                    int dinero = int.Parse(Console.ReadLine());
+
+
+                                    // Generamos numeros aleatorios
+                                    Random Generar = new Random();
+                                    int aleatorio2 = Generar.Next(1, 36);
+
+                                    if (aleatorio2 == 1 || aleatorio2 == 3 || aleatorio2 == 5 || aleatorio2 == 7 || aleatorio2 == 9 || aleatorio2 == 12 || aleatorio2 == 14 || aleatorio2 == 16 || aleatorio2 == 18 || aleatorio2 == 19|| aleatorio2 == 21 || aleatorio2 == 23 || aleatorio2 == 25 || aleatorio2 == 27 || aleatorio2 == 30 || aleatorio2 == 32 || aleatorio2 == 34 || aleatorio2 == 36)
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                        Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
+                                        saldo3 += dinero * 5;
+                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                        Console.WriteLine("Presiona una tecla para continuar ");
+                                        Console.WriteLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                        Console.WriteLine();
+                                        Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
+                                        saldo3 -= dinero;
+                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                        Console.WriteLine("Presiona una tecla para continuar ");
+                                        Console.WriteLine();
+                                    }
+
+                                    
+                                }
+                                if(apuesta3 == 2 ) // Negras 
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Tu saldo es de: " + saldo3 + " Pesos ");
+                                    Console.WriteLine();
+                                    Console.Write("¿Cuanto deseas apostar?     -1 PARA SALIR AL MENU ");
+                                    Console.WriteLine();
+
+                                    int dinero = int.Parse(Console.ReadLine());
+
+                                    Random Generar = new Random();
+                                    int aleatorio2 = Generar.Next(1, 36); 
+                                    if (aleatorio2 == 2 || aleatorio2 == 4 || aleatorio2 == 6 || aleatorio2 == 8 || aleatorio2 == 10 || aleatorio2 == 11 || aleatorio2 == 13 || aleatorio2 == 15 || aleatorio2 == 17 || aleatorio2 == 20 || aleatorio2 == 22 || aleatorio2 == 26 || aleatorio2 == 28 || aleatorio2 == 29 || aleatorio2 == 31 || aleatorio2 == 33 || aleatorio2 == 35       )
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                        Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
+                                        saldo3 += dinero * 5;
+                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                        Console.WriteLine("Presiona una tecla para continuar ");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                        Console.WriteLine();
+                                        Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
+                                        saldo3 -= dinero;
+                                        Console.WriteLine("Tu nuevo saldo es de: " + saldo3);
+                                        Console.WriteLine("Presiona una tecla para continuar ");
+
+                                    }
+                                    Console.ReadKey();
+                                }
+                            }
+                            Console.ReadKey();
+
+
+
+
+                        }
 
 
                         break;
