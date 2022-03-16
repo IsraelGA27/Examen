@@ -1,11 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
+﻿// Israel Garcia Agüero 
 
 
 namespace Examen
 {
     class Program
     {
+        public void EsMultiplo()
+        {
+
+        }
         public static void Main(string[] args)
         {
             // Esto lo hizo la consola yo no tuve nada que ver #El_Duende_Verde_Lo_Hizo
@@ -19,8 +22,13 @@ namespace Examen
             // Saldo con el que empieza el jugador
             int saldo = 300;  // Si para solo 300, es pobre el pana
 
+            ///////////////////////
+            //////////////////////
+            ///Aqui se da todo:// 
+            ////////////////////
+            ///////////////////
             while (true) // Para poder usar: break y continue
-            {
+            {//
                 Console.WriteLine();
                 Console.WriteLine("Tu saldo es de: " + saldo + " Pesos ");
 
@@ -38,13 +46,19 @@ namespace Examen
                 //int apuesta; 
                 int apuesta = int.Parse(Console.ReadLine());
 
+
+                
+                
+                // Valorando que se tenga el dinero suficiente para apostar
                 if (apuesta == -1)
                 {
                     break;
                 }
                 if (apuesta > saldo)
                 {
-                    Console.WriteLine("No tienes dinero");
+                    Console.WriteLine();
+                    Console.WriteLine("No tienes suficiente dinero");
+                    Console.WriteLine("Tu saldo es de:   " + saldo + "   /////" +"   Apostaste: " + apuesta);
                     continue;
                 }
 
@@ -75,7 +89,7 @@ namespace Examen
                     Console.WriteLine("Presiona cualquier tecla para continuar :D  ");
                 }
                 Console.ReadKey();
-            }
+            }//
         }
     }
 }
