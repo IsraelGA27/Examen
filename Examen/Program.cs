@@ -21,6 +21,19 @@ namespace Examen
             }
             
         }
+
+        public static bool EsPar(int par)
+        {
+            if (par % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static void Main(string[] args)
         {
             // Esto lo hizo la consola yo no tuve nada que ver #El_Duende_Verde_Lo_Hizo
@@ -252,8 +265,140 @@ namespace Examen
 
                         break;
                     case 3:
+                        int saldo4 = 300;
+
+                        while (true)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Tu saldo es de: " + saldo4 + " Pesos ");
+                            Console.WriteLine();
+                            Console.Write("APUESTA A PAR O IMPAR     -1 PARA SALIR AL MENU ");
+                            Console.WriteLine();
+                            Console.WriteLine("1- PAR       2.-IMPAR   ");
+                            Console.WriteLine();
+
+                            int apuesta4 = int.Parse(Console.ReadLine());
+
+                            if (apuesta4 == -1 || apuesta4 > 3 || apuesta4 == -1)
+                            {
+
+                                if (apuesta4 == -1)
+                                {
+                                    //Console.WriteLine("Estas apostando: " + apuesta2 + "  Y solo tienes: " + saldo2 + " disponibles ");
+                                    break;
+                                }
+
+                                Console.WriteLine("No puedes realizar tu apuesta ");
+
+                            }
+                            else
+                            {
+                                if (apuesta4 == 1)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Tu saldo es de: " + saldo4 + " Pesos ");
+                                    Console.WriteLine();
+                                    Console.Write("¿Cuanto deseas apostar?     -1 PARA SALIR AL MENU ");
+                                    Console.WriteLine();
+
+                                    int dinero = int.Parse(Console.ReadLine());
+
+
+                                    // Generamos numeros aleatorios
+                                    Random Generar = new Random();
+                                    int aleatorio2 = Generar.Next(1, 36);
+
+
+                                    if (!EsMultiplo(dinero))
+                                    {
+                                        Console.WriteLine("No puedes realizar tu apuesta ");
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        if (EsPar(aleatorio2))
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
+                                            saldo4 += dinero * 2;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo4);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+                                            Console.WriteLine();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine();
+                                            Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
+                                            saldo4 -= dinero;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo4);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+                                            Console.WriteLine();
+                                        }
+                                    }
+
+
+
+
+
+                                }
+                                if (apuesta4 == 2)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Tu saldo es de: " + saldo4 + " Pesos ");
+                                    Console.WriteLine();
+                                    Console.Write("¿Cuanto deseas apostar?     -1 PARA SALIR AL MENU ");
+                                    Console.WriteLine();
+
+                                    int dinero = int.Parse(Console.ReadLine());
+
+                                    Random Generar = new Random();
+                                    int aleatorio2 = Generar.Next(1, 36);
+
+                                    if (!EsMultiplo(dinero))
+                                    {
+                                        Console.WriteLine("No puedes realizar tu apuesta ");
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        if (!EsPar(aleatorio2))
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine("!Felicidades¡ Ha caido tu numero ");
+                                            saldo4 += dinero * 2;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo4);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine("SALIO EL NUMERO: " + aleatorio2);
+                                            Console.WriteLine();
+                                            Console.WriteLine("Has pedido, ah caido el numero: " + aleatorio2);
+                                            saldo4 -= dinero;
+                                            Console.WriteLine("Tu nuevo saldo es de: " + saldo4);
+                                            Console.WriteLine("Presiona una tecla para continuar ");
+
+                                        }
+                                        Console.ReadKey();
+                                    }
+
+
+                                    Console.ReadKey();
+                                }
+                            }
+                            Console.ReadKey();
+                        }
+
+
                         break;
-                }            
+
+                }
+              
             }
         }
     }
